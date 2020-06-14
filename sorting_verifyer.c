@@ -4,7 +4,7 @@
  * sorting_verifyer - Confirm if an array is sorted
  * @array: Array
  * @size: Size of array
- * Return: 1 if array  isnt sorted, 0 if it is
+ * Return: 1 if array isnt sorted, 0 if it is
  */
 int sorting_verifyer(int *array, size_t size)
 {
