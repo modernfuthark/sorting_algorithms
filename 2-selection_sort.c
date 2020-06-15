@@ -11,6 +11,9 @@ void selection_sort(int *array, size_t size)
 	size_t i, j, subidx = 0;
 	int swap = 0;
 
+	if (!array)
+		return;
+
 	for (i = 0; i < size - 1; i++)
 	{
 		subidx = i; /* First item in list should be sorted, move up 1 */
