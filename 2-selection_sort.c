@@ -1,4 +1,5 @@
 #include "sort.h"
+void swapper(int *i1, int *i2);
 
 /**
  * selection_sort - Selection sorting algorithm
@@ -9,7 +10,6 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, subidx = 0;
-	int swap = 0;
 
 	if (!array)
 		return;
@@ -23,9 +23,22 @@ void selection_sort(int *array, size_t size)
 				subidx = j;
 		}
 
-		swap = array[subidx];
-		array[subidx] = array[i];
-		array[i] = swap;
+		swapper(&array[subidx], &array[i]);
 		print_array(array, size);
 	}
+}
+
+/**
+ * swapper - Swap two addresses
+ * @i1: Index 1
+ * @i2: index 2
+ * Return: Nothing, function is void
+ */
+void swapper(int *i1, int *i2)
+{
+	int holder;
+
+	holder = *i1;
+	*i1 = *i2;
+	*i2 = holder;
 }
