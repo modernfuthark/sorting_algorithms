@@ -14,17 +14,20 @@ void selection_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 
-	for (i = 0; i < size - 1; i++)
+	for (i = 0; i < size; i++)
 	{
 		subidx = i; /* First item in list should be sorted, move up 1 */
-		for (j = subidx + 1; j < size; j++)
+		for (j = subidx; j < size; j++)
 		{
 			if (array[j] < array[subidx])
 				subidx = j;
 		}
 
-		swapper(&array[subidx], &array[i]);
-		print_array(array, size);
+		if (array[subidx] < array[i])
+		{
+			swapper(&array[subidx], &array[i]);
+			print_array(array, size);
+		}
 	}
 }
 
