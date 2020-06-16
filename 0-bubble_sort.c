@@ -1,4 +1,5 @@
 #include "sort.h"
+void swapper(int *i1, int *i2);
 
 /**
  * bubble_sort - Bubble sorting algorithm
@@ -9,7 +10,6 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
-	int swappy = 0;
 
 	if (!array || size < 2)
 		return;
@@ -20,11 +20,24 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j] > array[j + 1])
 			{
-				swappy = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = swappy;
+				swapper(&array[j], &array[j + 1]);
 			}
 		}
 		print_array(array, size);
 	}
+}
+
+/**
+ * swapper - Swap 2 addresses
+ * @i1: Index 1
+ * @i2: Index 2
+ * Return: Nothing, function is void
+ */
+void swapper(int *i1, int *i2)
+{
+	int holder;
+
+	holder = *i1;
+	*i1 = *i2;
+	*i2 = holder;
 }
