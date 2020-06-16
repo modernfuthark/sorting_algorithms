@@ -55,8 +55,9 @@ void swapper(int *i1, int *i2)
 /**
  * lomuto - Lomuto partition
  * @array: Array
- * @low: Low value
- * @high: High value
+ * @size: Size of array
+ * @lo: Low value
+ * @hi: High value
  * Return: Nothing, function is void
  */
 int lomuto(int *array, size_t size, int lo, int hi)
